@@ -1,8 +1,9 @@
 <?php $this->layout("master_template") ?>
-<div class="row">
-    <h1>Painel de monitoramento de ramal:</h1>
+<div>
+    <h1 class="text-center">Painel de monitoramento de ramal:</h1>
+    <hr>
 </div>
-<div class="row">
+<div class="row mb-3 p-3" style="margin: 0 auto;">
     <div id="cartoes">
     </div>
 </div>

@@ -1,4 +1,20 @@
+const time = 10000;
 let dataHora = document.getElementById('dataHora');
+
+function getStatusClass(status) {
+    if (status === 'indisponivel') {
+        return 'alert alert-dark';
+    } else if (status === 'chamando' || status === 'ocupado') {
+        return 'alert alert-warning';
+    } else if (status === 'pausado') {
+        return 'alert alert-danger';
+    } else if (status === 'disponivel') {
+        return 'alert alert-success';
+    } else {
+        return '';
+    }
+}
+
 function getInfo() {
     $.ajax({
         url: "ramais",
@@ -21,10 +37,10 @@ function getInfo() {
 
             $('#cartoes').empty();
             for (let i in data) {
-                $('#cartoes').append(`<div class="cartao card ${data[i].status === 'indisponivel' ? 'bg-secondary text-white' : 'bg-light'} mb-3">
+                $('#cartoes').append(`<div class="cartao card mb-3 text-dark ${getStatusClass(data[i].status)}">
                 <div class="card-body">
-                    <h5 class="card-title">${data[i].nome}</h5>
-                    <p class="card-text font-weight-bold">${data[i].agente}</p>
+                    <p class="card-title font-weight-bold">Ramal: ${data[i].nome}/${data[i].ramal}</p>
+                    <p class="card-text font-weight-bold">Agente: ${data[i].agente}</p>
                     <span class="${data[i].status} icone-posicao" title="${data[i].status}"></span>
                 </div>
             </div>`)
@@ -40,4 +56,4 @@ function getInfo() {
 
 getInfo();
 
-setInterval(getInfo, 10000);
+setInterval(getInfo, time);

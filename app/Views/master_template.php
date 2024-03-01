@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body class="bg-light">
     <main class="container" style="margin: 0 auto;">
         <?= $this->section('content') ?>
     </main>

@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .cartao {
     width: 200px;
     border-style: solid;
@@ -5,9 +11,15 @@
     border-width: 2px;
     float: left;
     position: relative;
-    padding: 5px;
+    padding: 3px;
     margin: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.5s ease;
+}
+
+.cartao:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.05);
 }
 
 .ocupado {
@@ -42,14 +54,14 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #272727;
+    background-color: #818181;
 }
 
 .pausado {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #c44404;
+    background-color: #f24f00;
 }
 
 .icone-posicao {
@@ -61,6 +73,8 @@
 @media (max-width: 768px) { 
     .cartao {
         width: 100%;
-        margin: 0 auto;
+    }
+    h1{
+        font-size: 30px;
     }
  }
