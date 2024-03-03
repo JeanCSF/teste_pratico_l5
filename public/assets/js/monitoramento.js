@@ -28,8 +28,6 @@ function getInfo() {
                 url: "salvar-ramal",
                 type: "POST",
                 data: JSON.stringify(postData),
-                success: function (data) {
-                },
                 error: function () {
                     console.log("Errouu!")
                 }
